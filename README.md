@@ -1,33 +1,41 @@
-# api node express with mysql crud app api.
+<br />
+<p align="center">
+  <h2 align="center">Autor: Diego Mendes</h2>
+</p>
+<br />
+<p align="center">
+  <h2 align="center">Simple api-node express typescript with mysql</h2>
+</p>
+# API Demo
+
+| Description        |    URL        | Method  |
+| ------------- |:-------------:| -----:|
+|  Get List course     | http://localhost:3000/courses | GET |
+| Create course      | http://localhost:3000/courses      |   POST |
+| Get a courses | http://localhost:3000/courses/:id      |    GET |
+| Update a course | http://localhost:3000/courses/:id      |    PUT |
+| Delete a course | http://localhost:3000/courses/:id      |    DELETE |
 
 
-    $ name project node-api
-    $ api configured for user registration only
+# Install Lib using in project
+```
+$ npm install --save express morgan
+$ npm install --save-dev typescript @types/express nodemon ts-node @types/morgan mysql2 types/mysql2
+```
 
+# How to run 
+```
+$ git clone https://github.com/gddiego/api-node-express
+$ npm install
+$ npm run dev # run for developer
+$ npm run build # run build for production
+```
 
-### Configure app
-
-#### Step 1 working with localhost
-
-        1. install mysql
-        2. you can also download mysql GUI `mysql workbench`.
-        3. paste host, user, password, database to `database/mysqlDB.js`
-        4. CREATE DATABASE crud;
-        5. CREATE TABLE users(
-                _id INT NOT NULL AUTO_INCREMENT,
-                firstName VARCHAR(45) NOT NULL,
-                lastName VARCHAR(45) NOT NULL,
-                email VARCHAR(45) NOT NULL,
-                createdAt DATETIME NULL,
-                updatedAt DATETIME NULL,
-                PRIMARY KEY (_id),
-                UNIQUE INDEX _id_UNIQUE (_id ASC),
-                UNIQUE INDEX email_UNIQUE (email ASC));
-
-### Start app
-
-    $ npm start
-
-### Start app using Nodemon
-
-    $ npm run dev
+# Deploy 
+```
+$ npm run build
+```
+- Copy folder dist to server
+```
+$ node dist/index.js
+```
