@@ -11,6 +11,11 @@ export async function getInstructors(req: Request, res: Response): Promise<Respo
 
 export async function createInstructor(req: Request, res: Response) {
   const newInstructor: Instructor = req.body;
+  if (!newInstructor.email || !newInstructor.name || !newInstructor.hour_value || !newInstructor.certificate) {
+    return res.json({
+      message: "Todos os campos são obrigatórios",
+    });
+  }
   const conn = await connect();
   await conn.query("INSERT INTO instructors SET ?", [newInstructor]);
   return res.json({

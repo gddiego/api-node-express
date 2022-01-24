@@ -11,6 +11,14 @@ export async function getStudents(req: Request, res: Response): Promise<Response
 
 export async function createStudent(req: Request, res: Response) {
   const newStudent: Student = req.body;
+   if (
+     !newStudent.document ||
+     !newStudent.birth_date || newStudent.name ||newStudent.email || newStudent.phone || newStudent.workload 
+   ) {
+     return res.json({
+       message: "Todos os campos são obrigatórios",
+     });
+   }
   const conn = await connect();
   await conn.query("INSERT INTO students SET ?", [newStudent]);
   return res.json({

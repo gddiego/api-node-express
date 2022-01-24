@@ -11,6 +11,11 @@ export async function getCourses(req: Request, res: Response): Promise<Response>
 
 export async function createCourse(req: Request, res: Response) {
   const newCourse: Course = req.body;
+  if (!newCourse.name || !newCourse.requirement || !newCourse.workload || !newCourse.price) {
+     return res.json({
+       message: "Todos os campos são obrigatórios",
+     });
+  }
   const conn = await connect();
   await conn.query("INSERT INTO courses SET ?", [newCourse]);
   return res.json({

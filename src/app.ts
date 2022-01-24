@@ -5,7 +5,11 @@ import morgan from 'morgan';
 import indexRoutes from './routes/index.routes';
 import courseRoutes from "./routes/courseRoutes";
 import instructorRoutes from "./routes/instructorRoutes";
-
+import classeRoutes from "./routes/classeRoutes";
+import studentRoutes from "./routes/studentRoutes";
+import matriculateRoutes from "./routes/matriculateRoutes";
+import userRoutes from "./routes/userRoutes";
+import { loginUser } from './controllers/loginController';
 export class App {
 
     private app: Application;
@@ -31,6 +35,11 @@ export class App {
         this.app.use(indexRoutes);
         this.app.use("/courses", courseRoutes);
         this.app.use("/instructors", instructorRoutes);
+        this.app.use("/classes", classeRoutes);
+        this.app.use("/matriculates", matriculateRoutes);
+        this.app.use("/students", studentRoutes);
+        this.app.use("/users", userRoutes);
+        this.app.use("/login", loginUser);
     }
 
     async listen() {

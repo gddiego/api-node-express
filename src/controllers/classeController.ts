@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 import { connect } from "../database";
-import { Classe } from "../interface/classes";
+import { Classe } from "../interface/Classes";
 
 export async function getClasses(req: Request, res: Response): Promise<Response> {
   const conn = await connect();
@@ -11,6 +11,7 @@ export async function getClasses(req: Request, res: Response): Promise<Response>
 
 export async function createClasse(req: Request, res: Response) {
   const newClasse: Classe = req.body;
+  
   const conn = await connect();
   await conn.query("INSERT INTO classes SET ?", [newClasse]);
   return res.json({

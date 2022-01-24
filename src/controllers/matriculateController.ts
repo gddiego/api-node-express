@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 import { connect } from "../database";
-import { Matriculate } from "../interface/matriculate";
+import { Matriculate } from "../interface/Matriculate";
 
 export async function getMatriculates(req: Request, res: Response): Promise<Response> {
   const conn = await connect();
@@ -12,6 +12,7 @@ export async function getMatriculates(req: Request, res: Response): Promise<Resp
 
 export async function createMatriculate(req: Request, res: Response) {
   const newMatriculate: Matriculate = req.body;
+   
   const conn = await connect();
   await conn.query("INSERT INTO matriculates SET ?", [newMatriculate]);
   return res.json({
