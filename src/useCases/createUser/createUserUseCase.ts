@@ -1,7 +1,7 @@
 
 import { User } from "../../interface/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
-import { ICreateUserRequestDTO } from "../createUser/createUserDTO";
+import { ICreateUserRequestDTO } from "./createUserDTO";
 
 export class CreateUserUseCase {
   constructor(private usersRepository: IUsersRepository) {}
