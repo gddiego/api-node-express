@@ -7,7 +7,7 @@ import {
   getMatriculate,
   deleteMatriculate,
   updateMatriculate,
-} from "../controllers/matriculateController";
+} from "../useCases/createMatriculate/matriculateController";
 
 router.route("/").get(getMatriculates).post(createMatriculate);
 

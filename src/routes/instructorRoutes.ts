@@ -7,7 +7,7 @@ import {
   getInstructor,
   deleteInstructor,
   updateInstructor,
-} from "../controllers/instructorsController";
+} from "../useCases/createInstructor/instructorsController";
 
 router.route("/").get(getInstructors).post(createInstructor);
 

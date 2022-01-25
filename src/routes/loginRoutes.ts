@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 
-import { loginUser } from "../controllers/loginController";
+import { loginUser } from "../useCases/createUser/loginController";
 
 router.route("/login").get(loginUser);
 

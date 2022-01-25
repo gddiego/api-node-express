@@ -1,7 +1,7 @@
 import { Router } from 'express';
 const router = Router();
 
-import { indexWelcome } from '../controllers/indexController';
+import { indexWelcome } from '../useCases/indexController';
 
 router.route('/').get(indexWelcome);
 

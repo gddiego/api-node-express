@@ -7,7 +7,7 @@ import {
   getUser,
   deleteUser,
   updateUser,
-} from "../controllers/userController";
+} from "../useCases/createUser/userController";
 
 router.route("/").get(getUsers).post(createUser);
 router

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-import { connect } from '../database'
-import { Course } from '../interface/Course';
+import { connect } from '../../database'
+import { Course } from '../../interface/Course';
 
 export async function getCourses(req: Request, res: Response): Promise<Response> {
   const conn = await connect();

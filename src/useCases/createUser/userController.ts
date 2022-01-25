@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { connect } from "../database";
-import { User } from "../interface/User";
+import { connect } from "../../database";
+import { User } from "../../interface/User";
 import bcrypt from 'bcryptjs';
 export async function getUsers(
   req: Request,
@@ -15,8 +15,10 @@ export async function getUsers(
 
 export async function createUser(req: Request, res: Response) {
   const newUser: User = req.body;
-  newUser.password = bcrypt.hashSync(newUser.password, 10);
+ 
+
   const conn = await connect();
+   newUser.password = bcrypt.hashSync(newUser.password, 10);
   await conn.query("INSERT INTO users SET ?", [newUser]);
   return res.json({
     message: "User Created",

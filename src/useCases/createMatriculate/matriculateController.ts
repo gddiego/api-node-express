@@ -1,8 +1,8 @@
 
 import { Request, Response } from "express";
 
-import { connect } from "../database";
-import { Matriculate } from "../interface/Matriculate";
+import { connect } from "../../database";
+import { Matriculate } from "../../interface/Matriculate";
 
 export async function getMatriculates(req: Request, res: Response): Promise<Response> {
   const conn = await connect();

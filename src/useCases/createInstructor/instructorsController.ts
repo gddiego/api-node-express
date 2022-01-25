@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { connect } from "../database";
-import { Instructor } from "../interface/instructor";
+import { connect } from "../../database";
+import { Instructor } from "../../interface/Instructor";
 
 export async function getInstructors(req: Request, res: Response): Promise<Response> {
   const conn = await connect();

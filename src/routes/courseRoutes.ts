@@ -7,7 +7,7 @@ import {
   getCourse,
   deleteCourse,
   updateCourse,
-} from "../controllers/courseController";
+} from "../useCases/createCouse/courseController";
 
 router.route("/").get(getCourses).post(createCourse);
 

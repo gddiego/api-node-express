@@ -7,7 +7,7 @@ import {
   getClasse,
   deleteClasse,
   updateClasse,
-} from "../controllers/classeController";
+} from "../useCases/createClasse/classeController";
 
 router.route("/").get(getClasses).post(createClasse);
 

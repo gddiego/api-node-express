@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { connect } from "../database";
-import { Student } from "../interface/student";
+import { connect } from "../../database";
+import { Student } from "../../interface/Student";
 
 export async function getStudents(req: Request, res: Response): Promise<Response> {
   const conn = await connect();
